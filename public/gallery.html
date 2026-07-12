@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Between Breath &amp; Light</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="brand"><a href="/">Between Breath <span class="amp">&amp;</span> Light</a></h1>
+    <p class="tagline">Photography by Rishi Sarangi</p>
+    <nav class="site-nav" id="mainNav">
+      <a href="/">Galleries</a>
+      <a href="/gallery.html?genre=landscape" data-genre="landscape">Landscape</a>
+      <a href="/gallery.html?genre=cityscape" data-genre="cityscape">Cityscape</a>
+      <a href="/gallery.html?genre=macro" data-genre="macro">Macro</a>
+      <a href="/gallery.html?genre=wildlife" data-genre="wildlife">Wildlife</a>
+      <a href="/gallery.html?genre=travel" data-genre="travel">Travel</a>
+      <a href="/gallery.html?genre=family" data-genre="family">Family</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 class="gallery-title" id="galleryTitle"></h2>
+
+    <div class="panel" id="unlockPanel" hidden>
+      <h2>Family Gallery</h2>
+      <p>This gallery is private. Enter the family password to view it.</p>
+      <form id="unlockForm">
+        <div class="form-row">
+          <input type="password" id="unlockPassword" placeholder="Password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn">Unlock</button>
+        <p class="error-msg" id="unlockError"></p>
+      </form>
+    </div>
+
+    <div class="photo-grid" id="photoGrid"></div>
+    <p class="empty-note" id="emptyNote" hidden>No photographs here yet.</p>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Photo viewer">
+    <button class="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-prev" aria-label="Previous">&#8249;</button>
+    <img alt="">
+    <button class="lb-next" aria-label="Next">&#8250;</button>
+    <p class="lb-caption"></p>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Between Breath &amp; Light &middot; <a href="mailto:rishisarangi@gmail.com">Contact</a></p>
+  </footer>
+
+  <script src="/js/site.js"></script>
+  <script src="/js/gallery.js"></script>
+</body>
+</html>

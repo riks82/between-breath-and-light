@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Between Breath &amp; Light</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="brand"><a href="/">Between Breath <span class="amp">&amp;</span> Light</a></h1>
+    <p class="tagline">Admin</p>
+  </header>
+
+  <main>
+    <!-- login -->
+    <div class="panel" id="loginPanel" hidden>
+      <h2>Admin Login</h2>
+      <p>Sign in to manage your photographs.</p>
+      <form id="loginForm">
+        <div class="form-row">
+          <input type="password" id="loginPassword" placeholder="Admin password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn">Sign in</button>
+        <p class="error-msg" id="loginError"></p>
+      </form>
+    </div>
+
+    <!-- dashboard -->
+    <div id="dashboard" hidden>
+      <div class="admin-bar">
+        <label class="toggle">
+          <input type="checkbox" id="familyPublicToggle">
+          Family gallery visible to everyone (unchecked&nbsp;=&nbsp;password protected)
+        </label>
+        <button class="btn small" id="logoutBtn">Sign out</button>
+      </div>
+
+      <section class="admin-section">
+        <h3>Upload photographs</h3>
+        <div class="upload-controls">
+          <div class="form-row">
+            <label for="uploadGenre">Genre</label>
+            <select id="uploadGenre">
+              <option value="landscape">Landscape</option>
+              <option value="cityscape">Cityscape</option>
+              <option value="macro">Macro</option>
+              <option value="wildlife">Wildlife</option>
+              <option value="travel">Travel</option>
+              <option value="family">Family</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label class="toggle" style="margin-top:1.2rem">
+              <input type="checkbox" id="uploadPublic" checked> Public
+            </label>
+          </div>
+        </div>
+        <div class="dropzone" id="dropzone">
+          Drop photos here, or click to choose files.<br>
+          <small>They are resized in your browser before upload — originals never leave this computer, and EXIF/GPS data is stripped.</small>
+        </div>
+        <input type="file" id="fileInput" accept="image/*" multiple hidden>
+        <div class="progress-list" id="progressList"></div>
+      </section>
+
+      <section class="admin-section">
+        <h3>Manage photographs</h3>
+        <div class="upload-controls">
+          <div class="form-row">
+            <label for="filterGenre">Filter by genre</label>
+            <select id="filterGenre">
+              <option value="">All genres</option>
+              <option value="landscape">Landscape</option>
+              <option value="cityscape">Cityscape</option>
+              <option value="macro">Macro</option>
+              <option value="wildlife">Wildlife</option>
+              <option value="travel">Travel</option>
+              <option value="family">Family</option>
+            </select>
+          </div>
+        </div>
+        <div class="admin-grid" id="adminGrid"></div>
+        <p class="empty-note" id="adminEmpty" hidden>No photographs uploaded yet.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Between Breath &amp; Light &middot; Admin</p>
+  </footer>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "between-breath-and-light",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Photography portfolio — Between Breath & Light",
+  "scripts": {
+    "dev": "wrangler pages dev --port 8788",
+    "deploy": "wrangler pages deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}

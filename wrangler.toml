@@ -1,0 +1,17 @@
+name = "between-breath-and-light"
+compatibility_date = "2026-01-01"
+pages_build_output_dir = "public"
+
+# D1 database for photo metadata.
+# After creating the real database with:  npx wrangler d1 create bbl-photos
+# paste its database_id below (local dev works fine with the placeholder).
+[[d1_databases]]
+binding = "DB"
+database_name = "bbl-photos"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+# R2 bucket for the image files.
+# Create with:  npx wrangler r2 bucket create bbl-photos
+[[r2_buckets]]
+binding = "PHOTOS"
+bucket_name = "bbl-photos"
