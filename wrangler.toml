@@ -8,7 +8,7 @@ pages_build_output_dir = "public"
 [[d1_databases]]
 binding = "DB"
 database_name = "bbl-photos"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "2df03b07-f661-4a57-a937-2b83d9992bc0"
 
 # R2 bucket for the image files.
 # Create with:  npx wrangler r2 bucket create bbl-photos
