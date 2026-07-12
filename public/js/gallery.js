@@ -8,8 +8,10 @@ const grid = document.getElementById('photoGrid');
 const emptyNote = document.getElementById('emptyNote');
 const unlockPanel = document.getElementById('unlockPanel');
 
-titleEl.textContent = genre;
-document.title = `${genre[0].toUpperCase()}${genre.slice(1)} — Between Breath & Light`;
+const meta = window.GENRE_META[genre] || { label: genre };
+const genreTitle = meta.title || meta.label;
+titleEl.textContent = genreTitle;
+document.title = `${genreTitle} — Between Breath & Light`;
 document.querySelector(`#mainNav a[data-genre="${genre}"]`)?.classList.add('active');
 
 let photos = [];

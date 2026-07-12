@@ -1,6 +1,6 @@
 // Shared helpers: session cookies (HMAC-signed), DB bootstrap, JSON responses.
 
-const GENRES = ['landscape', 'cityscape', 'macro', 'wildlife', 'travel', 'family'];
+const GENRES = ['landscape', 'cityscape', 'macro', 'wildlife', 'street', 'fine-art', 'favourites', 'family'];
 const SESSION_DAYS = 7;
 
 const enc = new TextEncoder();

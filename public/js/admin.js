@@ -166,7 +166,11 @@ async function handleFiles(fileList) {
 
 // ---- manage ----
 const adminGrid = document.getElementById('adminGrid');
-const GENRES = ['landscape', 'cityscape', 'macro', 'wildlife', 'travel', 'family'];
+const GENRES = ['landscape', 'cityscape', 'macro', 'wildlife', 'street', 'fine-art', 'favourites', 'family'];
+const GENRE_LABELS = {
+  landscape: 'Landscape', cityscape: 'Cityscape', macro: 'Macro', wildlife: 'Wildlife',
+  street: 'Street Photography', 'fine-art': 'Fine Art', favourites: 'My Personal Favourites', family: 'Family',
+};
 
 document.getElementById('filterGenre').addEventListener('change', loadPhotos);
 
@@ -216,7 +220,7 @@ async function loadPhotos() {
 
     const genreSel = document.createElement('select');
     for (const g of GENRES) {
-      const opt = new Option(g, g, false, g === photo.genre);
+      const opt = new Option(GENRE_LABELS[g] || g, g, false, g === photo.genre);
       genreSel.append(opt);
     }
     genreSel.addEventListener('change', async () => {

@@ -1,5 +1,5 @@
-// Home page: build the six genre tiles, each showing its most recent public photo.
-const GENRES = ['landscape', 'cityscape', 'macro', 'wildlife', 'travel', 'family'];
+// Home page: build the genre tiles, each showing its most recent public photo.
+const GENRES = ['landscape', 'cityscape', 'macro', 'wildlife', 'street', 'fine-art', 'favourites', 'family'];
 
 async function buildTiles() {
   const grid = document.getElementById('genreGrid');
@@ -12,7 +12,7 @@ async function buildTiles() {
 
     const label = document.createElement('span');
     label.className = 'label';
-    label.textContent = genre;
+    label.textContent = window.GENRE_META[genre]?.label || genre;
 
     let locked = false;
     let cover = null;
